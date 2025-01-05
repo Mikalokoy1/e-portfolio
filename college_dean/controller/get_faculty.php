@@ -39,7 +39,7 @@ list($semester, $academicYear) = explode(" - ", $schoolyear);
     
                                 $buttonFacultyAction = //isset($_SESSION['dashboard']) ? 
                                 '
-                                <a href="facultymembers-info.php?i='.$faculty_id.'" data-id="'.$faculty_id.'" class="bg-orange  text-center px-5 py-2 text-orange rounded-full cursor-pointer hover:opacity-75">
+                                <a href="facultymembers-info.php?i='.$faculty_id.'" data-id="'.$faculty_id.'" class="bg-orange mt-3 text-center w-full text-orange px-1 py-2 rounded-full shadow-lg transform transition-transform duration-200 hover:scale-105 hover:shadow-xl hover:bg-orange-600">
                                             View
                                         </a>
                                 '; 
@@ -53,9 +53,9 @@ list($semester, $academicYear) = explode(" - ", $schoolyear);
                                 echo 
                                 '
                                     <div class="card '.$addClass.' cursor-pointer hover:bg-red-50  mt- md:mt-0 my-3 bg-white  shadow-md rounded-lg px-3 py-3" data-faculty-id="'.$faculty_id.'">
-                                      <div class="grid   gap-x-3 place-items-end grid-flow-col-dense grid-cols-3 items-end">
+                                    <div class="grid items-center justify-items-center" style="grid-template-columns: 1fr 2.5fr 1.5fr">
                                     <img style="height:100px" src="'.$image.'" class="object-cover w-full rounded-lg ">
-                                    <div class="container ">
+                                    <div class="container px-3">
                                         <p class="whitespace-nowrap">'.$faculty_name.'</p>
                                         <p>'.$position.'</p>
                                         <p class="whitespace-nowrap">'.$specialization.'</p>

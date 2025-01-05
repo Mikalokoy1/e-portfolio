@@ -8,7 +8,7 @@
 
 
             <div class="grid grid-cols-3 items-center">
-                <h1 class="text-3xl text-black pb-6 col-span-2">Departments</h1>
+            <h1 class="text-3xl text-black pb-6 col-span-2">DEPARTMENTS</h1>
                 
                 <p class="text-sm flex justify-end items-center">
                     <button type="button" id="openModalButton"  class="bg-orange text-orange px-5 py-2 rounded-full cursor-pointer hover:opacity-75 flex items-center">

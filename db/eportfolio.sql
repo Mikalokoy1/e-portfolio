@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 15, 2024 at 07:40 PM
+-- Generation Time: Jan 03, 2025 at 04:21 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -45,10 +45,6 @@ INSERT INTO `calendar` (`id`, `description`, `user_id`, `type`, `date`, `time`, 
 (2, 'asdasd', 39, 'Events', '2024-08-29', '11:57:00', 0),
 (3, 'Mag gagala', 39, 'ToDo', '2024-08-29', '23:01:00', 0),
 (6, 'asdasd', 39, 'ToDo', '2024-09-07', '12:45:00', 0),
-(8, 'asdasd', 1, 'ToDo', '2024-08-23', '13:58:00', 0),
-(9, 'zxczx', 1, 'ToDo', '2024-08-30', '01:00:00', 0),
-(10, 'asd', 1, 'Events', '2024-08-30', '13:59:00', 0),
-(11, 'ngfnf', 1, 'Events', '2024-09-12', '22:12:00', 0),
 (14, 'test', 44, 'Events', '2024-10-24', '21:36:00', 0),
 (15, 'tes', 44, 'Events', '2024-10-09', '21:37:00', 0),
 (16, 'tesz', 44, 'ToDo', '2024-10-23', '21:37:00', 0),
@@ -56,7 +52,10 @@ INSERT INTO `calendar` (`id`, `description`, `user_id`, `type`, `date`, `time`, 
 (21, 'test', 43, 'Events', '2024-10-10', '22:06:00', 0),
 (22, 'asd', 43, 'ToDo', '2024-10-10', '22:06:00', 0),
 (23, 'test', 43, 'Events', '2024-10-10', '22:07:00', 0),
-(24, 'aasd', 43, 'ToDo', '2024-10-10', '10:08:00', 0);
+(24, 'aasd', 43, 'ToDo', '2024-10-10', '10:08:00', 0),
+(40, 'System Testing', 88, 'Events', '2024-11-26', '13:00:00', 0),
+(46, 'gdfg', 102, 'Events', '2024-12-13', '17:25:00', 0),
+(47, 'htllo', 102, 'ToDo', '2024-12-13', '17:33:00', 0);
 
 -- --------------------------------------------------------
 
@@ -78,7 +77,8 @@ CREATE TABLE `college_details` (
 INSERT INTO `college_details` (`college_id`, `college_name`, `college_image`, `status`) VALUES
 (13, 'college g', '66b48f109e683-doctor.png', 0),
 (14, 'college B', '66b48f109e683-doctor.png', 0),
-(15, 'new college', '66ed213b44b9a-greens.jpg', 0);
+(15, 'new college', '66ed213b44b9a-greens.jpg', 0),
+(16, 'College of Engineering and Information Technology', '6741063683c4d-HFUAjfbamNhbM8dsNSQW3D.jpg', 0);
 
 -- --------------------------------------------------------
 
@@ -101,7 +101,8 @@ CREATE TABLE `college_officers` (
 INSERT INTO `college_officers` (`id`, `college_id`, `college_secretary_id`, `college_dean_id`, `status`) VALUES
 (4, 14, 21, 20, 0),
 (5, 13, 1, 23, 0),
-(6, 15, 43, 44, 0);
+(6, 15, 43, 44, 0),
+(7, 16, 62, 61, 0);
 
 -- --------------------------------------------------------
 
@@ -133,7 +134,45 @@ INSERT INTO `college_user_added` (`id`, `college_id`, `user_id`, `status`) VALUE
 (10, 15, 55, 0),
 (11, 15, 56, 0),
 (12, 15, 57, 0),
-(13, 15, 59, 0);
+(13, 15, 59, 0),
+(14, 13, 60, 0),
+(15, 13, 61, 0),
+(16, 13, 62, 0),
+(17, 16, 63, 0),
+(18, 16, 64, 0),
+(19, 16, 65, 0),
+(20, 16, 66, 0),
+(21, 16, 67, 0),
+(22, 16, 68, 0),
+(23, 16, 69, 0),
+(24, 16, 70, 0),
+(25, 16, 71, 0),
+(26, 16, 72, 0),
+(27, 16, 73, 0),
+(28, 16, 74, 0),
+(29, 16, 75, 0),
+(30, 16, 76, 0),
+(31, 16, 77, 0),
+(32, 16, 78, 0),
+(33, 16, 79, 0),
+(34, 16, 80, 0),
+(35, 16, 81, 0),
+(36, 16, 88, 0),
+(37, 16, 89, 0),
+(38, 16, 90, 0),
+(39, 16, 91, 0),
+(40, 16, 92, 0),
+(41, 16, 93, 0),
+(42, 16, 94, 0),
+(43, 16, 95, 0),
+(44, 16, 102, 0),
+(45, 16, 103, 0),
+(46, 16, 104, 0),
+(47, 16, 108, 0),
+(48, 16, 109, 0),
+(49, 16, 111, 0),
+(50, 16, 112, 0),
+(51, 16, 113, 0);
 
 -- --------------------------------------------------------
 
@@ -156,14 +195,21 @@ CREATE TABLE `course` (
 --
 
 INSERT INTO `course` (`id`, `name`, `image`, `department_id`, `college_id`, `secretary_id`, `status`) VALUES
-(1, 'tite si ibonss', '66bc9898d50ad-1879x1056-The-Wolf-Among-Us-Wallpaper-HD-Wolf-Wallpaper.pro_-1536x863.jpg', 5, 13, 24, 0),
 (2, 'course 2', '66bc98700ea38-asdczxczxkdkqjwkejqwelkqmweblqwmebqlwemqwne.jpg', 5, 13, 24, 0),
 (3, 'Programming', '66bd8ba4c7556-a.jpg', 6, 13, 24, 0),
 (4, 'Web Development', '66c0bc43897e0-bg1.png', 6, 13, 24, 0),
 (5, 'course 2', '66c6eedad3c20-unnamed.png', 7, 14, 40, 0),
 (6, 'new course new college', '66ed3cef0c01e-plant4.png', 8, 15, 46, 0),
-(7, 'c1', '6703d593cd76a-logo_chicken.png', 9, 15, 51, 0),
-(8, 'zzzzxc', '672e1921aaed1-bg.jpg', 9, 15, 55, 0);
+(9, 'Information Technology', '675b6145a4530-images.jpg', 11, 16, 64, 0),
+(10, 'Computer Science', '675b6155bab35-cs.jpeg', 11, 16, 64, 0),
+(11, 'Architecture', '674134f38c302-archi.jpeg', 12, 16, 66, 0),
+(12, 'Civil Engineering', '6741351329aa4-NDUSTRIAL ENGINEERING ANF TECHNOLOGY.jpeg', 12, 16, 66, 0),
+(13, 'Course Testing', '6741523c15d96-cs.jpeg', 14, 16, 79, 0),
+(14, 'Course Testing 2', '6741525876dec-COMPUTER ELECTRONICS AND ELECTRICAL ENGINEERING.jpeg', 14, 16, 79, 0),
+(15, 'Industrial Engineering', '6743a65c732a2-james-harrison-vpOeXr5wmR4-unsplash.jpg', 15, 16, 69, 0),
+(16, 'BS Computer Engineering (BSCpE)', '675b65c3cf7a5-images (1).jpg', 13, 16, 70, 0),
+(17, 'BS Electronics Engineering (BSEcE)', '675b661bf2011-images (2).jpg', 13, 16, 70, 0),
+(18, 'BS Electrical Engineering (BSEE)', '675b660c61545-Umspannwerk-Pulverdingen_380kV-Trennschalter.jpg', 13, 16, 70, 0);
 
 -- --------------------------------------------------------
 
@@ -190,7 +236,14 @@ INSERT INTO `credential_added` (`id`, `user_id`, `title`, `description`, `image`
 (3, 53, 'gg', 'asdasd', '66ed9969717df-gg.jpg', 'image/jpeg', '2024-09-18', 0),
 (5, 53, 'asd', 'q', '66ed99cac587f-gg.jpg', 'image/jpeg', '2024-09-05', 0),
 (6, 51, 'qqqqqqqq', 'qqqq', '66edb24207f65-gg.jpg', 'image/jpeg', '2024-09-05', 0),
-(8, 52, 'zxc', 'zxc', '66edb4299f005-sample_pdf.pdf', 'application/pdf', '2024-09-18', 0);
+(8, 52, 'zxc', 'zxc', '66edb4299f005-sample_pdf.pdf', 'application/pdf', '2024-09-18', 0),
+(12, 61, 'cvv', 'trjrjr', '674463d114146-467755279_1042269941035225_2314011519112823248_n.jpg', 'image/jpeg', '2002-10-10', 0),
+(13, 64, 'Cutie', 'qwedrty', '674552c3cbd55-certificate2.jpeg', 'image/jpeg', '2002-10-10', 0),
+(14, 62, 'VISUAL GRAPHIC DESIGN', 'NCIII CERTIFICATE', '675b5febd2c6e-certificate2.jpeg', 'image/jpeg', '2020-10-11', 0),
+(15, 74, 'SFHBF', 'BVX', '675b62e94d55e-sample_credentials.jpg', 'image/jpeg', '2024-09-09', 0),
+(17, 71, 'Sample Credential', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi non lacus lectus. Fusce ac dui finibus,', '675b6453d20de-certificate2.jpeg', 'image/jpeg', '2020-04-20', 0),
+(18, 63, 'gfdg', 'sfs', '675bd6c038db9-1695937967075.jpg', 'image/jpeg', '2020-03-12', 0),
+(19, 63, 'gdsgsd', 'dgdg', '675bd6d13be6e-1691184398221.jpg', 'image/jpeg', '2002-12-12', 0);
 
 -- --------------------------------------------------------
 
@@ -225,7 +278,11 @@ INSERT INTO `current_year_sem` (`id`, `college_id`, `current_sem`, `current_year
 (25, 15, '2nd Semester', '2028-2029', 'history'),
 (26, 15, '1st Semester', '2029-2030', 'history'),
 (27, 15, '2nd Semester', '2029-2030', 'history'),
-(28, 15, '1st Semester', '2030-2031', 'current');
+(28, 15, '1st Semester', '2030-2031', 'current'),
+(29, 16, '1st Semester', '2024-2025', 'history'),
+(30, 16, '2nd Semester', '2024-2025', 'history'),
+(31, 16, '1st Semester', '2024-2025', 'history'),
+(32, 16, '3rd Semester', '2024-2025', 'current');
 
 -- --------------------------------------------------------
 
@@ -260,7 +317,20 @@ INSERT INTO `deparment_section` (`id`, `name`, `yearlevel`, `semester`, `schooly
 (10, 'mike test', '1st Year', '1st Semester', '2027-2028', 9, 0),
 (11, 'zxc', '1st Year', '1st Semester', '2027-2028', 9, 0),
 (12, '3-A', '3rd Year', '1st Semester', '2027-2028', 9, 0),
-(13, 'ggggggggggg', '2nd Year', '1st Semester', '2027-2028', 9, 1);
+(13, 'ggggggggggg', '2nd Year', '1st Semester', '2027-2028', 9, 1),
+(14, 'BSIT 4-2', '4th Year', '', '', 11, 0),
+(16, 'BSIT 3-1', '3rd Year', '', '', 11, 0),
+(17, 'BSIT 1-1', '1st Year', '', '', 11, 0),
+(18, 'BSIT 1-2', '1st Year', '1st Semester', '2024-2025', 11, 0),
+(19, 'BSIT 4-4', '4th Year', '1st Semester', '2024-2025', 11, 0),
+(20, 'DT 1-1', '1st Year', '1st Semester', '2024-2025', 14, 0),
+(21, 'DT 1-2', '1st Year', '1st Semester', '2024-2025', 14, 0),
+(22, 'DT 2-2', '2nd Year', '1st Semester', '2024-2025', 14, 0),
+(23, 'BSIT 6-6', '6th Year', '1st Semester', '2024-2025', 11, 1),
+(25, 'BSIT 2-2', '2nd Year', '1st Semester', '2024-2025', 11, 0),
+(27, 'IE-1-1', '1st Year', '1st Semester', '2024-2025', 15, 0),
+(29, 'IE-1-2', '1st Year', '1st Semester', '2024-2025', 15, 0),
+(30, 'BSIT 6-1', '6th Year', '1st Semester', '2024-2025', 11, 0);
 
 -- --------------------------------------------------------
 
@@ -272,8 +342,8 @@ CREATE TABLE `department_details` (
   `id` int(11) NOT NULL,
   `department_name` varchar(256) NOT NULL,
   `department_code` varchar(256) NOT NULL,
-  `department_dean` bigint(20) NOT NULL,
-  `department_secretary` bigint(20) NOT NULL,
+  `department_dean` bigint(20) NOT NULL DEFAULT 0,
+  `department_secretary` bigint(20) NOT NULL DEFAULT 0,
   `department_image` text NOT NULL,
   `status` int(11) NOT NULL DEFAULT 0,
   `depatment_college` bigint(20) NOT NULL
@@ -284,12 +354,13 @@ CREATE TABLE `department_details` (
 --
 
 INSERT INTO `department_details` (`id`, `department_name`, `department_code`, `department_dean`, `department_secretary`, `department_image`, `status`, `depatment_college`) VALUES
-(5, 'Bachelor of science in information technology', 'BSIT', 23, 25, '66b50111b760a-bgg1.png', 0, 13),
-(6, 'Bachelor of Science in information system', 'BSIS', 22, 24, '66b4db01bd739-bg122.png', 0, 13),
-(7, 'dep 2', 'dep 2', 41, 40, '66c6e9ff83486-c.jpg', 0, 14),
-(8, 'z', 'Zxx', 45, 46, '66ed295ab7f93-greens.jpg', 0, 15),
-(9, 'new department 2', 'NEW_DEPARTMENT_2', 56, 55, '66ed78494e3b3-icons9.png', 0, 15),
-(10, 'testing', 'test', 59, 57, '672b68f6b4372-bg.jpg', 0, 15);
+(11, 'INFORMATION TECHNOLOGY', 'DIT', 63, 95, '675b5e930333d-OIP.jpg', 0, 16),
+(12, 'CIVIL ENGINEERING AND ARCHITECTURE', 'DCEA', 65, 75, '675b5eee843bd-istockphoto-1063723682-612x612.jpg', 0, 16),
+(13, 'COMPUTER ELECTRONICS AND ELECTRICAL ENGINEERING', 'DCEEE', 67, 70, '675b5f0feed24-COMPUTER ELECTRONICS AND ELECTRICAL ENGINEERING.jpeg', 0, 16),
+(14, 'TEST DEPARTMENT', 'TD', 78, 79, '6741477542a53-COMPUTER ELECTRONICS AND ELECTRICAL ENGINEERING.jpeg', 1, 16),
+(15, 'INDUSTRIAL ENGINEERING AND  TECHNOLOGY', 'DIET', 68, 69, '675b5f44920a9-Umspannwerk-Pulverdingen_380kV-Trennschalter.jpg', 0, 16),
+(20, 'AGRICULTURAL AND FOOD ENGINEERING', 'DAFE', 0, 113, '675b5f6cac63b-image1-4.jpg', 0, 16),
+(22, 'DEPARTMENT OF COMPUTER STUDIES', 'DCS', 0, 109, '675bcbb537f57-animation_blog_top-view-of-illustrator-drawing-cartoon-sketches-o-2023-11-27-05-16-05-utc-min-1024x683.jpeg', 1, 16);
 
 -- --------------------------------------------------------
 
@@ -316,7 +387,26 @@ INSERT INTO `department_faculty` (`id`, `department_id`, `faculty_id`, `status`)
 (5, 8, 47, 0),
 (6, 8, 48, 0),
 (7, 9, 53, 0),
-(8, 9, 54, 0);
+(8, 9, 54, 0),
+(9, 11, 71, 0),
+(10, 11, 72, 0),
+(11, 11, 73, 0),
+(14, 12, 76, 0),
+(15, 14, 80, 0),
+(16, 14, 81, 0),
+(18, 15, 89, 0),
+(19, 13, 90, 0),
+(22, 11, 92, 0),
+(23, 11, 93, 0),
+(26, 11, 103, 0),
+(27, 11, 104, 0),
+(31, 11, 0, 0),
+(32, 11, 0, 0),
+(33, 11, 0, 0),
+(37, 11, 88, 0),
+(42, 11, 0, 0),
+(46, 11, 94, 0),
+(47, 12, 0, 0);
 
 -- --------------------------------------------------------
 
@@ -348,7 +438,28 @@ INSERT INTO `faculty_subject` (`id`, `faculty_id`, `subject_id`, `sy`, `sem`, `s
 (39, 54, 7, '2030-2031', '1st Semester', 0),
 (40, 53, 7, '2030-2031', '1st Semester', 0),
 (41, 53, 8, '2030-2031', '1st Semester', 0),
-(42, 54, 8, '2030-2031', '1st Semester', 0);
+(42, 54, 8, '2030-2031', '1st Semester', 0),
+(43, 71, 9, '2024-2025', '1st Semester', 0),
+(44, 71, 10, '2024-2025', '1st Semester', 0),
+(45, 71, 11, '2024-2025', '1st Semester', 0),
+(46, 73, 11, '2024-2025', '1st Semester', 0),
+(47, 80, 12, '2024-2025', '1st Semester', 0),
+(48, 81, 12, '2024-2025', '1st Semester', 0),
+(49, 74, 10, '2024-2025', '1st Semester', 0),
+(50, 71, 10, '2024-2025', '3rd Semester', 0),
+(51, 71, 9, '2024-2025', '3rd Semester', 0),
+(52, 88, 9, '2024-2025', '3rd Semester', 0),
+(53, 74, 9, '2024-2025', '3rd Semester', 0),
+(54, 74, 10, '2024-2025', '3rd Semester', 0),
+(55, 89, 14, '2024-2025', '3rd Semester', 0),
+(56, 92, 15, '2024-2025', '3rd Semester', 0),
+(57, 94, 15, '2024-2025', '3rd Semester', 0),
+(58, 93, 11, '2024-2025', '3rd Semester', 0),
+(59, 95, 16, '2024-2025', '3rd Semester', 0),
+(60, 93, 16, '2024-2025', '3rd Semester', 0),
+(62, 94, 9, '2024-2025', '3rd Semester', 0),
+(63, 103, 10, '2024-2025', '3rd Semester', 0),
+(64, 108, 9, '2024-2025', '3rd Semester', 0);
 
 -- --------------------------------------------------------
 
@@ -389,7 +500,26 @@ INSERT INTO `faculty_subject_section` (`id`, `faculty_id`, `section_id`, `subjec
 (56, 53, 12, 8, '2030-2031', '1st Semester', 0),
 (57, 53, 10, 7, '2030-2031', '1st Semester', 0),
 (58, 53, 11, 7, '2030-2031', '1st Semester', 0),
-(59, 53, 12, 7, '2030-2031', '1st Semester', 0);
+(59, 53, 12, 7, '2030-2031', '1st Semester', 0),
+(60, 71, 14, 9, '2024-2025', '1st Semester', 0),
+(62, 71, 17, 11, '2024-2025', '1st Semester', 0),
+(63, 73, 16, 11, '2024-2025', '1st Semester', 0),
+(65, 80, 21, 12, '2024-2025', '1st Semester', 0),
+(67, 81, 22, 12, '2024-2025', '1st Semester', 0),
+(68, 74, 19, 10, '2024-2025', '1st Semester', 0),
+(76, 74, 25, 10, '2024-2025', '3rd Semester', 0),
+(77, 71, 19, 10, '2024-2025', '3rd Semester', 0),
+(78, 88, 17, 9, '2024-2025', '3rd Semester', 1),
+(80, 89, 27, 14, '2024-2025', '3rd Semester', 0),
+(81, 92, 16, 15, '2024-2025', '3rd Semester', 0),
+(82, 94, 25, 15, '2024-2025', '3rd Semester', 0),
+(83, 93, 30, 11, '2024-2025', '3rd Semester', 0),
+(84, 95, 16, 16, '2024-2025', '3rd Semester', 0),
+(85, 93, 18, 16, '2024-2025', '3rd Semester', 0),
+(91, 71, 17, 9, '2024-2025', '3rd Semester', 0),
+(92, 71, 18, 9, '2024-2025', '3rd Semester', 0),
+(94, 94, 16, 9, '2024-2025', '3rd Semester', 0),
+(95, 103, 17, 10, '2024-2025', '3rd Semester', 0);
 
 -- --------------------------------------------------------
 
@@ -458,7 +588,75 @@ INSERT INTO `faculty_uploads` (`id`, `faculty_id`, `subject_id`, `upload_id`, `s
 (62, 53, 7, 3, 10, '67378c32bde25-kapepongtsa.pdf', '2024-11-16 02:00:18', 0, '1st Semester', '2030-2031'),
 (63, 53, 8, 4, 10, '67378c950d579-kapepongtsa.pdf', '2024-11-16 02:01:57', 0, '1st Semester', '2030-2031'),
 (64, 53, 7, 1, 10, '67378f4935429-kapepongtsa.pdf', '2024-11-16 02:13:29', 0, '1st Semester', '2030-2031'),
-(65, 53, 8, 3, 12, '67378fe51a5cd-kapepongtsa.pdf', '2024-11-16 02:16:05', 0, '1st Semester', '2030-2031');
+(65, 53, 8, 3, 12, '67378fe51a5cd-kapepongtsa.pdf', '2024-11-16 02:16:05', 0, '1st Semester', '2030-2031'),
+(66, 71, 9, 1, 14, '674119c4e43d8-resume-sample.pdf', '2024-11-23 07:54:44', 0, '1st Semester', '2024-2025'),
+(67, 71, 9, 3, 14, '674119cce6ba3-resume-sample.pdf', '2024-11-23 07:54:52', 0, '1st Semester', '2024-2025'),
+(68, 71, 9, 6, 14, '674119d4ce985-resume-sample.pdf', '2024-11-23 07:55:00', 0, '1st Semester', '2024-2025'),
+(69, 71, 9, 10, 14, '674119dbe9dde-resume-sample.pdf', '2024-11-23 07:55:07', 0, '1st Semester', '2024-2025'),
+(70, 71, 9, 12, 14, '674119e4d2825-resume-sample.pdf', '2024-11-23 07:55:16', 0, '1st Semester', '2024-2025'),
+(71, 71, 9, 15, 14, '674119ee85869-resume-sample.pdf', '2024-11-23 07:55:26', 0, '1st Semester', '2024-2025'),
+(72, 71, 9, 14, 14, '674119f83c609-resume-sample.pdf', '2024-11-23 07:55:36', 0, '1st Semester', '2024-2025'),
+(73, 71, 9, 2, 14, '67411be855ca3-ITEC-116.pdf', '2024-11-23 08:03:52', 0, '1st Semester', '2024-2025'),
+(74, 71, 9, 4, 14, '67411bf154ca0-ITEC-116.pdf', '2024-11-23 08:04:01', 0, '1st Semester', '2024-2025'),
+(75, 71, 9, 8, 14, '67411bfba7085-ITEC-116.pdf', '2024-11-23 08:04:11', 0, '1st Semester', '2024-2025'),
+(76, 71, 9, 11, 14, '67411c05a872b-ITEC-116.pdf', '2024-11-23 08:04:21', 0, '1st Semester', '2024-2025'),
+(77, 74, 10, 14, 19, '674166f716570-resume-sample.pdf', '2024-11-23 13:24:07', 0, '1st Semester', '2024-2025'),
+(78, 74, 10, 6, 19, '67416702bc1f9-resume-sample.pdf', '2024-11-23 13:24:18', 0, '1st Semester', '2024-2025'),
+(79, 71, 11, 1, 17, '6741707d43187-resume-sample.pdf', '2024-11-23 14:04:45', 0, '1st Semester', '2024-2025'),
+(80, 71, 11, 3, 17, '674170852f797-resume-sample.pdf', '2024-11-23 14:04:53', 0, '1st Semester', '2024-2025'),
+(81, 71, 11, 6, 17, '6741708d42d60-resume-sample.pdf', '2024-11-23 14:05:01', 0, '1st Semester', '2024-2025'),
+(82, 71, 11, 10, 17, '6741709481368-resume-sample.pdf', '2024-11-23 14:05:08', 0, '1st Semester', '2024-2025'),
+(83, 71, 11, 12, 17, '6741709c63553-resume-sample.pdf', '2024-11-23 14:05:16', 0, '1st Semester', '2024-2025'),
+(84, 71, 11, 14, 17, '674170a79ee62-resume-sample.pdf', '2024-11-23 14:05:27', 0, '1st Semester', '2024-2025'),
+(85, 71, 10, 1, 19, '675b7a6f95276-Attendance_Sheets.pdf', '2024-12-13 01:06:07', 0, '3rd Semester', '2024-2025'),
+(86, 71, 10, 3, 19, '675b7a761973b-Class_Records.pdf', '2024-12-13 01:06:14', 0, '3rd Semester', '2024-2025'),
+(87, 71, 10, 6, 19, '675b7a7d18f3c-Student_Outputs.pdf', '2024-12-13 01:06:21', 0, '3rd Semester', '2024-2025'),
+(88, 71, 10, 10, 19, '675b7a845e444-Exam_Results_Discussion.pdf', '2024-12-13 01:06:28', 0, '3rd Semester', '2024-2025'),
+(89, 71, 10, 12, 19, '675b7a8db017b-Consultation_Slips.pdf', '2024-12-13 01:06:37', 0, '3rd Semester', '2024-2025'),
+(90, 71, 10, 15, 19, '675b7a9a21ba3-Lecture_Module.pdf', '2024-12-13 01:06:50', 0, '3rd Semester', '2024-2025'),
+(91, 71, 10, 14, 19, '675b7ae062570-Syllabus_Acceptance.pdf', '2024-12-13 01:08:00', 0, '3rd Semester', '2024-2025'),
+(92, 71, 10, 11, 19, '675b7ac701e47-Exam_with_TOS.pdf', '2024-12-13 01:07:35', 0, '3rd Semester', '2024-2025'),
+(93, 71, 10, 2, 19, '675b7aa759f68-Grading_Sheets.pdf', '2024-12-13 01:07:03', 0, '3rd Semester', '2024-2025'),
+(94, 71, 10, 4, 19, '675b7aae66582-Lab_Module.pdf', '2024-12-13 01:07:10', 0, '3rd Semester', '2024-2025'),
+(95, 71, 10, 8, 19, '675b7abf7fbd8-Lab_Reports.pdf', '2024-12-13 01:07:27', 0, '3rd Semester', '2024-2025'),
+(106, 88, 9, 1, 17, '67452feab5f6e-DCIT-65-Midterms-Reviewer.pdf', '2024-11-26 10:18:18', 0, '3rd Semester', '2024-2025'),
+(107, 88, 9, 3, 17, '67452ff23d002-DCIT-65-Midterms-Reviewer.pdf', '2024-11-26 10:18:26', 0, '3rd Semester', '2024-2025'),
+(108, 88, 9, 6, 17, '67452ff93e285-DCIT-65-Midterms-Reviewer.pdf', '2024-11-26 10:18:33', 0, '3rd Semester', '2024-2025'),
+(109, 88, 9, 10, 17, '674530015e06e-DCIT-65-Midterms-Reviewer.pdf', '2024-11-26 10:18:41', 0, '3rd Semester', '2024-2025'),
+(110, 88, 9, 12, 17, '67453007efa9c-DCIT-65-Midterms-Reviewer.pdf', '2024-11-26 10:18:47', 0, '3rd Semester', '2024-2025'),
+(111, 88, 9, 15, 17, '674530105643c-DCIT-65-Midterms-Reviewer.pdf', '2024-11-26 10:18:56', 0, '3rd Semester', '2024-2025'),
+(112, 88, 9, 14, 17, '674530198e8d7-DCIT-65-Midterms-Reviewer.pdf', '2024-11-26 10:19:05', 0, '3rd Semester', '2024-2025'),
+(113, 88, 9, 11, 17, '6745301f6427e-DCIT-65-Midterms-Reviewer.pdf', '2024-11-26 10:19:11', 0, '3rd Semester', '2024-2025'),
+(114, 88, 9, 8, 17, '6745302600111-DCIT-65-Midterms-Reviewer.pdf', '2024-11-26 10:19:18', 0, '3rd Semester', '2024-2025'),
+(115, 88, 9, 4, 17, '6745302c765f5-DCIT-65-Midterms-Reviewer.pdf', '2024-11-26 10:19:24', 0, '3rd Semester', '2024-2025'),
+(116, 88, 9, 2, 17, '67453033ba22a-DCIT-65-Midterms-Reviewer.pdf', '2024-11-26 10:19:31', 0, '3rd Semester', '2024-2025'),
+(117, 74, 10, 1, 19, '674f840c7d9ff-STICKERS.pdf', '2024-12-04 06:19:56', 0, '3rd Semester', '2024-2025'),
+(118, 74, 10, 4, 19, '6750ea760fe5a-sample2.pdf', '2024-12-05 07:49:10', 0, '3rd Semester', '2024-2025'),
+(119, 74, 10, 10, 19, '6750eac39b931-sample2.pdf', '2024-12-05 07:50:27', 0, '3rd Semester', '2024-2025'),
+(133, 71, 9, 1, 17, '675b7af690c2c-Attendance_Sheets.pdf', '2024-12-13 01:08:22', 0, '3rd Semester', '2024-2025'),
+(134, 71, 9, 3, 17, '675b7afd075b2-Class_Records.pdf', '2024-12-13 01:08:29', 0, '3rd Semester', '2024-2025'),
+(135, 71, 9, 6, 17, '675b7b0348cd0-Student_Outputs.pdf', '2024-12-13 01:08:35', 0, '3rd Semester', '2024-2025'),
+(136, 71, 9, 10, 17, '675b7b0a0aa39-Exam_Results_Discussion.pdf', '2024-12-13 01:08:42', 0, '3rd Semester', '2024-2025'),
+(137, 71, 9, 12, 17, '675b7b1079370-Consultation_Slips.pdf', '2024-12-13 01:08:48', 0, '3rd Semester', '2024-2025'),
+(138, 71, 9, 15, 17, '675b7b195489d-Lecture_Module.pdf', '2024-12-13 01:08:57', 0, '3rd Semester', '2024-2025'),
+(139, 71, 9, 2, 17, '675b7b3066abc-Grading_Sheets.pdf', '2024-12-13 01:09:20', 0, '3rd Semester', '2024-2025'),
+(140, 71, 9, 4, 17, '67599f223bb23-sample2.pdf', '2024-12-11 22:18:10', 0, '3rd Semester', '2024-2025'),
+(141, 71, 9, 8, 17, '67599f27247ea-sample2.pdf', '2024-12-11 22:18:15', 0, '3rd Semester', '2024-2025'),
+(142, 71, 9, 11, 17, '67599f2c1384b-sample2.pdf', '2024-12-11 22:18:20', 0, '3rd Semester', '2024-2025'),
+(143, 71, 9, 14, 17, '67599f334b0cb-sample.pdf', '2024-12-11 22:18:27', 0, '3rd Semester', '2024-2025'),
+(144, 71, 9, 11, 18, '6759bda29b23e-sample.pdf', '2024-12-12 00:28:18', 0, '3rd Semester', '2024-2025'),
+(145, 71, 9, 1, 18, '6759c3f07c53f-sample2.pdf', '2024-12-12 00:55:12', 0, '3rd Semester', '2024-2025'),
+(146, 71, 9, 3, 18, '6759c3f4b62ad-sample2.pdf', '2024-12-12 00:55:16', 0, '3rd Semester', '2024-2025'),
+(147, 71, 9, 2, 18, '6759c3f8e9775-sample2.pdf', '2024-12-12 00:55:20', 0, '3rd Semester', '2024-2025'),
+(148, 71, 9, 4, 18, '6759c3fcb2b24-sample2.pdf', '2024-12-12 00:55:24', 0, '3rd Semester', '2024-2025'),
+(149, 71, 9, 6, 18, '6759c4024d420-sample2.pdf', '2024-12-12 00:55:30', 0, '3rd Semester', '2024-2025'),
+(150, 71, 9, 8, 18, '6759c40858dd3-sample.pdf', '2024-12-12 00:55:36', 0, '3rd Semester', '2024-2025'),
+(152, 71, 9, 10, 18, '6759c4110b608-sample.pdf', '2024-12-12 00:55:45', 0, '3rd Semester', '2024-2025'),
+(153, 71, 9, 12, 18, '6759c41908e7b-sample2.pdf', '2024-12-12 00:55:53', 0, '3rd Semester', '2024-2025'),
+(154, 71, 9, 14, 18, '6759c4584b8e0-sample.pdf', '2024-12-12 00:56:56', 0, '3rd Semester', '2024-2025'),
+(155, 95, 16, 3, 16, '6759fa02837fa-sample2.pdf', '2024-12-12 04:45:54', 0, '3rd Semester', '2024-2025'),
+(156, 95, 16, 14, 16, '6759fa09ceafa-sample2.pdf', '2024-12-12 04:46:01', 0, '3rd Semester', '2024-2025'),
+(157, 71, 9, 15, 18, '675bf2b1a2ced-Lab_Module.pdf', '2024-12-13 16:39:13', 0, '3rd Semester', '2024-2025');
 
 -- --------------------------------------------------------
 
@@ -485,7 +683,7 @@ INSERT INTO `for_uploads` (`id`, `name`, `image`, `status`) VALUES
 (6, 'Student Outputs', 'file.png', 0),
 (8, 'Lab Reports', 'file.png', 0),
 (10, 'Exam Results Discussion', 'file.png', 0),
-(11, 'Exam with TOS', 'file.png', 0),
+(11, 'Exam with ToS', 'file.png', 0),
 (12, 'Consultation Slips', 'file.png', 0),
 (14, 'Syllabus Acceptance', 'file.png', 0),
 (15, 'Lecture Module', 'file.png', 0);
@@ -509,10 +707,20 @@ CREATE TABLE `resume_upload` (
 --
 
 INSERT INTO `resume_upload` (`id`, `faculty_id`, `file`, `file_type`, `status`) VALUES
-(2, 36, '66edb3a90cb8b-sample_pdf.pdf', 'application/pdf', 0),
-(3, 51, '66edb3a90cb8b-sample_pdf.pdf', 'application/pdf', 0),
-(4, 52, '66edb3a90cb8b-sample_pdf.pdf', 'application/pdf', 0),
-(5, 54, '6703d62007863-kapepongtsa.pdf', 'application/pdf', 0);
+(2, 36, '674471c96ddda-E-PorfolioSystem_Rationale.pdf', 'application/pdf', 0),
+(3, 51, '674471c96ddda-E-PorfolioSystem_Rationale.pdf', 'application/pdf', 0),
+(4, 52, '674471c96ddda-E-PorfolioSystem_Rationale.pdf', 'application/pdf', 0),
+(5, 54, '674471c96ddda-E-PorfolioSystem_Rationale.pdf', 'application/pdf', 0),
+(6, 62, '675b60021702b-resume-sample.pdf', 'application/pdf', 0),
+(7, 71, '675f4b5d51dcc-resume-sample.pdf', 'application/pdf', 0),
+(8, 73, '674471c96ddda-E-PorfolioSystem_Rationale.pdf', 'application/pdf', 0),
+(9, 74, '675bdabe10499-Class_Records.pdf', 'application/pdf', 0),
+(10, 61, '675e87c79b498-resume-sample.pdf', 'application/pdf', 0),
+(11, 63, '675cd64359c90-47561659.jpg', 'image/jpeg', 0),
+(12, 88, '6745487257634-RESUME.pdf', 'application/pdf', 0),
+(13, 64, '674552aa7e3ec-resume-sample.pdf', 'application/pdf', 0),
+(14, 102, '675b78063cddf-resume-sample.pdf', 'application/pdf', 0),
+(15, 108, '675b9c32ccb2a-Attendance_Sheets.pdf', 'application/pdf', 0);
 
 -- --------------------------------------------------------
 
@@ -542,7 +750,16 @@ INSERT INTO `subject` (`id`, `code`, `name`, `image`, `secretary_id`, `course_id
 (5, 'subject code', 'Subject Name', '66c6eef67379f-Gemini_Generated_Image_ab0ppxab0ppxab0p.jpeg', 40, 5, 0),
 (6, 'subject_new_code', 'subject new', '66ed3d0f2b9ed-OIP.png', 46, 6, 0),
 (7, 'sub1', 'sub1', '6703d5a00ef79-logo_chicken.png', 51, 7, 0),
-(8, 'qqq', 'casd', '672e19382530d-462571929_841428821217793_6869436032257337556_n.jpg', 55, 8, 0);
+(8, 'qqq', 'casd', '672e19382530d-462571929_841428821217793_6869436032257337556_n.jpg', 55, 8, 0),
+(9, 'ITEC116', 'System Architecture 2', '675b5b78032ac-istockphoto-1136829806-612x612.jpg', 64, 9, 0),
+(10, 'ITEC 111A', 'IT ELECTIVE 3 (INTEGRATED PROGRAMMING AND TECHNOLOGIES 2)', '675b5b8b11313-5655d6819af9d388202a479453fbfaaa.jpg', 64, 9, 0),
+(11, 'ITEC200B', 'CAPSTONE PROJECT AND RESEARCH 2', '675b5badcde8e-System Administration and Maintenance.jpg', 64, 9, 0),
+(12, 'SBT', 'Subject Testing', '67415283d6c0b-Discrete Structure.jpg', 79, 13, 0),
+(13, 'S2T', 'Subject 2 Testing', '674154e63b30f-james-harrison-vpOeXr5wmR4-unsplash.jpg', 79, 13, 0),
+(14, 'IE', 'Industrial Engi', '6743a67712cab-computerscience-scaled.jpg', 69, 15, 0),
+(15, 'INSY 55', 'SYSTEM ANALYSIS AND DESIGN', '675849813518c-cs.jpeg', 74, 9, 0),
+(16, 'DCIT 60A', 'METHODS OF RESEARCH', '6758499c14c1a-COMPUTER ELECTRONICS AND ELECTRICAL ENGINEERING.jpeg', 74, 9, 0),
+(17, 'ET', 'ETHICAL HACKING', '675b61d31d437-1695937967075.jpg', 74, 10, 0);
 
 -- --------------------------------------------------------
 
@@ -595,7 +812,45 @@ INSERT INTO `users` (`id`, `employment_id`, `email`, `password`, `status`, `role
 (55, '9191919191', '9191919191@gmail.com', '$2y$10$pmOqnNUiU67Bl1SN9MrMPuSSd1Xodt/6RT2EXG4rUZmipgP.FCeY.', 0, 'department_secretary', 1, 'Regular', ''),
 (56, '5555123123', '5555123123@gmail.com', '$2y$10$iW6lAmT52QuxoqkaFgReje.i4P1QYy2vb78CJO9v3mo1TZesdc9Zy', 0, 'department_chairperson', 1, 'Regular', ''),
 (57, '765412312', '765412312@cvsu.edu.ph', '$2y$10$IcabV2VRjVIuvgzhZHJvNuVIlE.ew36K1WNwl6T3vYWupzW4fWf4q', 0, 'department_secretary', 1, 'Regular', ''),
-(59, '7234234234', '7234234234@cvsu.edu.ph', '$2y$10$I9X/eQgH5yic9HOngocWIOY5wFbNYSGeSwNfTvvwVTUe4CbHsTOiS', 0, 'department_chairperson', 1, 'Regular', '');
+(59, '7234234234', '7234234234@cvsu.edu.ph', '$2y$10$I9X/eQgH5yic9HOngocWIOY5wFbNYSGeSwNfTvvwVTUe4CbHsTOiS', 0, 'department_chairperson', 1, 'Regular', ''),
+(60, '202105206', 'testing@cvsu.edu.ph', '$2y$10$a5nD1LVEJPO4Lrcjf6zZg.8lVQy5knoFKfcqnmnVbLVfukTllpzAG', 1, 'college_dean', 0, 'Contractual', ''),
+(61, '202105203', 'may@cvsu.edu.ph', '$2y$10$gJFAn41Zj.1B4Asv9Kv8ouOIrwLZayePG0OWYT5xUUQZmQiREiv3S', 0, 'college_dean', 1, 'Regular', ''),
+(62, '202105204', 'irinemay.ompaling@cvsu.edu.ph', '$2y$10$8HxcMH7.5kNKDXG.3ISNl..AY8nkG6nlWTEPe9IULATvSlfnC/08y', 0, 'college_secretary', 1, 'Regular', 'BiNopZ'),
+(63, '10000001', 'roberto.garcia@cvsu.edu.ph', '$2y$10$eJ554gI35QEB6FKbC7Ih3.cDk2ZdVAdDfsMr9.g3AB3bgpMb3qZym', 0, 'department_chairperson', 1, 'Regular', ''),
+(64, '20000001', 'jennifer.perez@cvsu.edu.ph', '$2y$10$Al03jrP5Frk9QBy8RbUUMe/NvOIb4gnYCRhfSeGjiTRbfI8dWpDkq', 0, 'department_secretary', 1, 'Regular', ''),
+(65, '10000002', 'miguel.torres@cvsu.edu.ph', '$2y$10$EEv.2YKx2a9oFRCkO.NDj.a/PawRA6EUbL6oPO.H6JeDnD7KYh3s6', 0, 'department_chairperson', 1, 'Contractual', ''),
+(66, '20000002', 'alicia.santos@cvsu.edu.ph', '$2y$10$/M2E9ndOrG9cyug0fyIRyuvhFCT7Rsvx35urfN5iPMOHdbvY0LfkG', 0, 'department_secretary', 1, 'Regular', ''),
+(67, '10000003', 'sophia.delacruz@cvsu.edu.ph', '$2y$10$ezMPIrpQbf/8wyn6Ql35j.bEF9tAd04tJWVDu41/JqrZFVdY4ETPe', 0, 'department_chairperson', 1, 'Regular', ''),
+(68, '10000004', 'ricardo.santiago@cvsu.edu.ph', '$2y$10$dQhUKIiYq.NiMweOii0o/.bP9LGbCjPuVbZVQWptRSqWiXQg8odhW', 0, 'department_chairperson', 1, 'Regular', ''),
+(69, '20000004', 'linda.martinez@cvsu.edu.ph', '$2y$10$EZjlQvuKKhrXlR4IJQRF9eAxSU5JPUpduA3vi.x2cWgsI.znrodaG', 0, 'department_secretary', 1, 'Regular', ''),
+(70, '20000003', 'teresa.gonzales@cvsu.edu.ph', '$2y$10$iAhhL6L5HxuwhE38lNblcO6YkdlldyIZKrqZ7Zsexrm80aqN6l4n2', 0, 'department_secretary', 1, 'Regular', ''),
+(71, '30000001', 'ramon.rivera@cvsu.edu.ph', '$2y$10$5bGnV6q/eBqS7V9IvvPuGuiBWJ5WwdIusUoBGg2X1ZC9pMV5nXjES', 0, 'faculty', 0, 'Contractual', ''),
+(72, '31000001', 'anna.rodriguez@cvsu.edu.ph', '$2y$10$MqmxGXbxZZSlAvcOfvjejuaazzZcNoz2XkNRlqGnrSEmitzfr69Qm', 1, 'faculty', 0, 'Contractual', ''),
+(73, '32000001', 'carlos.mendez@cvsu.edu.ph', '$2y$10$PEizscLZSSuiG/o94mqRPu6p8SPLwXyF41xmbcBxCX/xxZ6rL9HYG', 1, 'faculty', 0, 'Contractual', ''),
+(74, '33000001', 'mariaclara.reyes@cvsu.edu.ph', '$2y$10$w/4QN4DPhhr3c4hTFgSNouaky89xtJd0.LnSluhSlN0zOhWp/X0D2', 0, 'department_secretary', 0, 'Regular', ''),
+(75, '30000002', 'juan.santos@cvsu.edu.ph', '$2y$10$Nw0p4eJJocKaxg8cQTkL4eKukehClUc0e6VBGFJWiuyIYByOGEj2.', 0, 'department_secretary', 0, 'Regular', ''),
+(76, '31000002', 'elena.torres@cvsu.edu.ph', '$2y$10$avm4xfbhuFB.crkrzq51wO/gtznV1mVxIJ0691nFmaTRbFM.THVnC', 0, 'faculty', 0, 'Contractual', ''),
+(77, '202105209', 'testing.college.sec@cvsu.edu.ph', '$2y$10$cfn6kxAX6NMSox5JV4edQ.BW4JPO98GFBccYnEpGfqPFEUB1HJPXy', 0, 'college_secretary', 0, 'Contractual', ''),
+(78, '10000006', 'department.chairperson@cvsu.edu.ph', '$2y$10$LP0AUHCC4ev0k/tCyQVfLO0tX7yqu8UIupr8oskK5ufsG9yqg5ruC', 0, 'department_chairperson', 1, 'Regular', ''),
+(79, '20000006', 'department.secretary@cvsu.edu.ph', '$2y$10$lWtIKEr0gTWOdDcmgC92ReG0CI3YVgFQjPKIZDHmiLGyJY5ztNcGS', 1, 'department_secretary', 1, 'Contractual', ''),
+(80, '30000006', 'member1ez@cvsu.edu.ph', '$2y$10$SgF/frg2.0uDFABkAJLsUe3APgCsJJObagtuowaM8.V/R5OF7Ag3a', 0, 'faculty', 0, 'Contractual', ''),
+(81, '31000006', 'member2 @cvsu.edu.ph', '$2y$10$DoURHh5i0xoftPC94WQ9yuO/WQNTps8No13n6Iz/91Jm9PeJqwR06', 0, 'faculty', 0, 'Contractual', ''),
+(88, '202105207', 'testingu@cvsu.edu.ph', '$2y$10$uu0f2IEX4.ZTQM1kEpeVau2v7OMAvnoYO5X6N5XgjVNssPOWkIZvW', 1, 'faculty', 0, 'Regular', ''),
+(89, '30000004', 'jose.reyes@cvsu.edu.ph', '$2y$10$v5oKlwezw6azhy41O8yNteRvfawmiqyAnDcDUeaT5gtL.gAUN5tjK', 0, 'faculty', 0, 'Contractual', ''),
+(90, '876543', 'mr.ephraiel@cvsu.edu.ph', '$2y$10$xsnhzpzEFMYKtCa5BSVTx.bxDQ/EagC1xEkZQgca7KllY49ppeHja', 0, 'faculty', 0, 'Regular', ''),
+(91, '202105300', 'larajean.sibunga@cvsu.edu.ph', '$2y$10$vAM670I6jLXpnDA2fRiVteXdANoHRK5EqqQlaFzOYNRM82nKshJ2m', 0, 'college_dean', 0, 'Regular', ''),
+(92, '33400001', 'sace@cvsu.edu.ph', '$2y$10$1CXTCoGz.o0ZvGYXtAWTqOt3twuakxusAVvo3QZTaCOSyJUcEEtia', 1, 'faculty', 0, 'Regular', ''),
+(93, '33500001', 'arceta@cvsu.edu.ph', '$2y$10$2IxRRTKq46hzR0sJBpCoauHZZetTZ4EV07J5PO2SJkuhXDQ0ZV0mS', 1, 'faculty', 0, 'Regular', ''),
+(94, '33600001', 'vergara@cvsu.edu.ph', '$2y$10$aY5B1xFileFtClRtv1Aove5KId1SV1yQ/XCGEGnojJ0qZ7NS/rPQG', 0, 'faculty', 0, 'Contractual', ''),
+(95, '33700001', 'ricalde@cvsu.edu.ph', '$2y$10$0MldaZNt1HBewOOZ/GasUOmcLpcUlWx4xDi8gwSoDd.SWWnBOtc.S', 0, 'department_secretary', 0, 'Contractual', ''),
+(102, '2021053100', 'zyrellrezanszzo@cvsu.edu.ph', '$2y$10$GRIyYlZhi.4buQuGF0zOHu7m9mudARqz9kSTRhUjHJrBkY6kZch.i', 1, 'college_dean', 0, 'Regular', ''),
+(103, '202105000', 'samplee@cvsu.edu.ph', '$2y$10$lzija0OgUPyrJI1tVorazeuOBpI2ggcsxCxZBp2/QJPph.Sty53eu', 1, 'faculty', 0, 'Contractual', ''),
+(104, '202112345', 'johnaimiel.pena@cvsu.edu.ph', '$2y$10$ZyGB4CcNQLPq9IdfrqtVzeX8JYebNBS1NFcfLf954ERvESGRheDcC', 1, 'faculty', 0, 'Regular', ''),
+(108, '20211234567', 'rivera@cvsu.edu.ph', '$2y$10$A9aWAMUwDcajvoVmkDwGKOhsziIbraJjXOoJaBJIHEP6Xia.1fcYO', 0, 'department_secretary', 0, 'Contractual', ''),
+(109, '2012345678', 'ffeeffd@cvsu.edu.ph', '$2y$10$rTaua9unfVNShkAnsyf9kOZ7DHemKasu/gGStimXnlpwBV7H8p.Q.', 0, 'department_secretary', 0, 'Regular', ''),
+(111, '202406650', 'roialbert.lucero@cvsu.edu.ph', '$2y$10$WG8GRg9AKdH.X1Tx6RmwceHC6U9xHxAAtOhUdyXu8RtWO.PlhJazC', 1, 'college_dean', 0, 'Regular', ''),
+(112, '2021123456', 'sampleee@cvsu.edu.ph', '$2y$10$z10.WGHpZ/6e/1tIF9dm0Ol.0LBAtPp6AM7zSeOQF6ZLeayfa/Jte', 0, 'department_secretary', 0, 'Regular', ''),
+(113, '20000005', 'helen.rodriguez@cvsu.edu.ph', '$2y$10$aqbfDzjs/lTjU6jTW3pZI.xNLL4QGnjHnPekGy89QPXHb9EIUwqgu', 0, 'department_secretary', 0, 'Regular', '');
 
 -- --------------------------------------------------------
 
@@ -645,7 +900,45 @@ INSERT INTO `user_details` (`user_id`, `name`, `address`, `birthday`, `phone`, `
 (55, '9191919191', 'tester', '2024-10-18', '0912345678', 'tester', '6705369da816d-logo_chicken.png'),
 (56, '5555123123', 'zxc', '2024-10-05', '09876541231', 'aa', '6705526e98ed3-bg.jpg'),
 (57, '765412312', '765412312', '2024-10-30', '765412312', '765412312', '672b683767e0e-bg.jpg'),
-(59, '7234234234', '7234234234', '2024-11-01', '7234234234', '7234234234', '672b687026f3d-bg.jpg');
+(59, '7234234234', '7234234234', '2024-11-01', '7234234234', '7234234234', '672b687026f3d-bg.jpg'),
+(60, 'TESTING', 'Cebu', '2002-10-10', '094394723800', 'Robotics', '6741041a5733e-aa6566aaacd80d2da2e7496c7ee8d637.jpg'),
+(61, 'Dr. May Rodriguez', 'Cavite', '2000-02-22', '09439472390', 'Programming', 'profile_675f49f241a7a8.65170852.jpg'),
+(62, 'Dr. Irine May Ompaling', 'Makati', '2002-10-10', '09674102820', 'Full Stack', 'profile_675b5fa2e485a8.14351540.jpg'),
+(63, 'Dr. Roberto Garcia', 'Cavite', '1978-09-04', '09439472381', 'Robotics', 'profile_675b667445a464.03201654.png'),
+(64, 'Ms. Jennifer Kim', 'Cavite', '2002-10-10', '09439472381', 'BACK-END', 'profile_67455c532254e6.13051007.jpg'),
+(65, 'Dr. Miguel Torres', 'Indang, Cavite', '1970-07-31', '09123456789', 'Layout', 'profile_675f39abeca125.53410051.jpg'),
+(66, 'Ms. Alicia Santos', 'Tanza, Cavite', '2000-04-05', '09439472381', 'Robotics', 'profile_675f4f9a51dc62.65818804.jpg'),
+(67, 'Dr. Sophia Dela Cruz', 'Naic, Cavite', '2002-05-06', '09876543245', 'Drafting', 'profile_675f3a8e8c2955.89659079.jpeg'),
+(68, 'Dr. Ricardo Santiago', 'Trece, Cavite', '2000-02-09', '09876543245', 'BACK-END', 'profile_675f3b461b5730.02644449.jpg'),
+(69, 'Ms. Linda Martinez', 'Cavite', '2000-02-23', '0987654', 'BACK-END', 'profile_675b7991547a21.34247778.jpg'),
+(70, 'Ms. Teresa Gonzales', 'Manila', '2000-10-20', '09876543245', 'Electrical', 'profile_675b6573bcc5e5.21642226.jpg'),
+(71, 'Dr. Ramon Rivera', 'Makati City', '2002-02-20', '096778444331', 'Layout', 'profile_675b63984850d0.66638693.jpg'),
+(72, 'Dr. Anna Rodriguez', 'San Jose, Bulucan', '2002-01-23', '09677842331', 'System Administration', '67411668553a9-64f0d39d98ca065c3654a58e7c4caa06.jpg'),
+(73, 'Dr. Carlos Mendez', 'San Fernando, Pampanga', '2002-04-22', '09677842331', 'Debugginh', '6741174b35d00-png-clipart-leonardo-dicaprio-titanic-leonardo-dicaprio-celebrities-formal-wear.png'),
+(74, 'Dr. Maria Clara Reyes', 'Laguna', '1990-07-08', '09677842331', 'UI/UX Designer', 'profile_67583ffcedd3f0.26978558.jpg'),
+(75, 'Dr. Juan Santos', 'Cebu', '2002-07-08', '09123456789', 'BACK-END', 'profile_675e72c824a6c8.18321174.jpg'),
+(76, 'Dr. Elena Torres', 'Cubao', '2002-10-10', '09876543245', 'BACK-END', 'profile_675f39ea92e7d1.98754067.jpg'),
+(77, 'Testing College Secretary', 'Cavite', '1990-08-09', '09123456789', 'front-end', '67414287b4f63-shawn.jpg'),
+(78, 'Test Department Chairperson', 'Cubao', '2002-02-02', '09439472381', 'dghdghdgd', '6741469670963-d64602a7b954a8b2f09bac97a7911bf8.jpg'),
+(79, 'Test Department Secretary', 'Cubao', '2022-05-04', '09439472381', 'Full Stack', '674147451c94f-d64602a7b954a8b2f09bac97a7911bf8.jpg'),
+(80, 'Member1', 'Cavite', '2002-03-04', '09677842331', 'Programming', '6741544e497bc-64f0d39d98ca065c3654a58e7c4caa06.jpg'),
+(81, 'Member2', 'San Fernando, Pampanga', '2000-10-10', '09677842331', 'Programming', '674154a20ee55-Lee-MinHo_profile_s_0216.jpg'),
+(88, 'Testing Faculty U', 'cavite', '2002-10-10', '0987654321', 'Layout', 'profile_675b66dc03dc10.48467615.jpg'),
+(89, 'Dr. Jose Reyes', 'Cavite', '2002-10-10', '09439472381', 'Electrical', '674f9d3fb5a29-360_F_617571490_Lagtv4frKo0T4zoElZsldDuzznAATG10.jpg'),
+(90, 'tester', 'asdasd', '2025-01-02', '098765431231', 'asda', '6750e5284e86a-no_image.jpg'),
+(91, 'Lara Jean', 'Manila, Philippines', '2000-12-22', '09114102822', 'Firing', '67582c9166214-D5jB8bgWkAAZGyI.jpg'),
+(92, 'Elisabeth Sace', 'Manila, Philippines', '2004-02-22', '09114102822', 'Programming', '675830f87de4a-7550a1c6dc4673affc47626958d1b76f.jpg'),
+(93, 'Maraiah Queen Arceta', 'Manila, Philippines', '2005-02-02', '09004101122', 'Programming', '67583133e3c8b-460449455_1211811546729481_1744740225868258300_n (1).jpg'),
+(94, 'Maria Niccolet Vergara', 'Manila, Philippines', '2000-03-15', '09114101122', 'Programming', '6758317c1ddb7-460476196_1211811466729489_1737615108033501579_n.jpg'),
+(95, 'Mary Loi Yves Ricalde', 'Makati, Philippines', '2002-04-06', '09674102822', 'Modeling', '675831c193fce-460468863_1211811536729482_4797097431543960371_n.jpg'),
+(102, 'Zy Rezano', 'Manila, Philippines', '2024-12-10', '09674102811', 'Programming', '675852345ae7c-bts.jpg'),
+(103, 'Sample Faculty number 10', 'Cavite', '2024-12-14', '09677842332', 'Programming', '675b998b89e84-c0749b7cc401421662ae901ec8f9f660.jpg'),
+(104, 'Emiel', 'Cavite', '2000-12-12', '09677842331', 'Programming', '675b9b4ba15f5-0d6666ff4eb8217a11b4e7378af96f9b.jpg'),
+(108, 'Emiel Sample', 'San Fernando, Pampanga', '2000-12-12', '09677842332', 'Programming', '675b9bc2c8c88-0d6666ff4eb8217a11b4e7378af96f9b.jpg'),
+(109, 'Dela Cruz', 'maragondon', '2002-10-25', '98765432232', 'Graphic Designing', '675bce4e41e49-b0cb3fccfa20bbab72712644b7cc5a5a.jpg'),
+(111, 'Dela Cruz', 'maragondon', '2024-12-13', '98765432232', 'Graphic Designing', '675beb36e0e0a-shawn.jpg'),
+(112, 'Bonza', 'Cavite', '2020-03-04', '09677842331', 'Data Mining', '675bedf615712-c0749b7cc401421662ae901ec8f9f660.jpg'),
+(113, 'Ms. Helen Rodriguez', 'Cavite, Philippines', '2000-12-13', '09674102822', 'Writing', '675e7d167ae80-fe3d7af9-2e30-42d0-a6c9-19a6d919df97.jpeg');
 
 --
 -- Indexes for dumped tables
@@ -668,9 +961,7 @@ ALTER TABLE `college_details`
 --
 ALTER TABLE `college_officers`
   ADD PRIMARY KEY (`id`),
-  ADD KEY `college_id` (`college_id`),
-  ADD KEY `user_id` (`college_secretary_id`),
-  ADD KEY `college_dean_id` (`college_dean_id`);
+  ADD KEY `college_id` (`college_id`);
 
 --
 -- Indexes for table `college_user_added`
@@ -701,16 +992,15 @@ ALTER TABLE `current_year_sem`
 -- Indexes for table `deparment_section`
 --
 ALTER TABLE `deparment_section`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `name` (`name`);
 
 --
 -- Indexes for table `department_details`
 --
 ALTER TABLE `department_details`
   ADD PRIMARY KEY (`id`),
-  ADD KEY `depatment_college` (`depatment_college`),
-  ADD KEY `department_dean` (`department_dean`),
-  ADD KEY `department_secretary` (`department_secretary`);
+  ADD KEY `depatment_college` (`depatment_college`);
 
 --
 -- Indexes for table `department_faculty`
@@ -759,7 +1049,6 @@ ALTER TABLE `subject`
 --
 ALTER TABLE `users`
   ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `email` (`email`),
   ADD UNIQUE KEY `employment_id` (`employment_id`);
 
 --
@@ -776,79 +1065,79 @@ ALTER TABLE `user_details`
 -- AUTO_INCREMENT for table `calendar`
 --
 ALTER TABLE `calendar`
-  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=48;
 
 --
 -- AUTO_INCREMENT for table `college_details`
 --
 ALTER TABLE `college_details`
-  MODIFY `college_id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `college_id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT for table `college_officers`
 --
 ALTER TABLE `college_officers`
-  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `college_user_added`
 --
 ALTER TABLE `college_user_added`
-  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=52;
 
 --
 -- AUTO_INCREMENT for table `course`
 --
 ALTER TABLE `course`
-  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT for table `credential_added`
 --
 ALTER TABLE `credential_added`
-  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- AUTO_INCREMENT for table `current_year_sem`
 --
 ALTER TABLE `current_year_sem`
-  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
 
 --
 -- AUTO_INCREMENT for table `deparment_section`
 --
 ALTER TABLE `deparment_section`
-  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
 
 --
 -- AUTO_INCREMENT for table `department_details`
 --
 ALTER TABLE `department_details`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
 -- AUTO_INCREMENT for table `department_faculty`
 --
 ALTER TABLE `department_faculty`
-  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=48;
 
 --
 -- AUTO_INCREMENT for table `faculty_subject`
 --
 ALTER TABLE `faculty_subject`
-  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=43;
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=65;
 
 --
 -- AUTO_INCREMENT for table `faculty_subject_section`
 --
 ALTER TABLE `faculty_subject_section`
-  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=60;
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=97;
 
 --
 -- AUTO_INCREMENT for table `faculty_uploads`
 --
 ALTER TABLE `faculty_uploads`
-  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=66;
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=158;
 
 --
 -- AUTO_INCREMENT for table `for_uploads`
@@ -860,19 +1149,19 @@ ALTER TABLE `for_uploads`
 -- AUTO_INCREMENT for table `resume_upload`
 --
 ALTER TABLE `resume_upload`
-  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT for table `subject`
 --
 ALTER TABLE `subject`
-  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=60;
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=114;
 
 --
 -- Constraints for dumped tables
@@ -882,9 +1171,7 @@ ALTER TABLE `users`
 -- Constraints for table `college_officers`
 --
 ALTER TABLE `college_officers`
-  ADD CONSTRAINT `college_officers_ibfk_1` FOREIGN KEY (`college_id`) REFERENCES `college_details` (`college_id`),
-  ADD CONSTRAINT `college_officers_ibfk_2` FOREIGN KEY (`college_secretary_id`) REFERENCES `users` (`id`),
-  ADD CONSTRAINT `college_officers_ibfk_3` FOREIGN KEY (`college_dean_id`) REFERENCES `users` (`id`);
+  ADD CONSTRAINT `college_officers_ibfk_1` FOREIGN KEY (`college_id`) REFERENCES `college_details` (`college_id`);
 
 --
 -- Constraints for table `current_year_sem`
@@ -896,9 +1183,7 @@ ALTER TABLE `current_year_sem`
 -- Constraints for table `department_details`
 --
 ALTER TABLE `department_details`
-  ADD CONSTRAINT `department_details_ibfk_1` FOREIGN KEY (`depatment_college`) REFERENCES `college_details` (`college_id`),
-  ADD CONSTRAINT `department_details_ibfk_2` FOREIGN KEY (`department_dean`) REFERENCES `users` (`id`),
-  ADD CONSTRAINT `department_details_ibfk_3` FOREIGN KEY (`department_secretary`) REFERENCES `users` (`id`);
+  ADD CONSTRAINT `department_details_ibfk_1` FOREIGN KEY (`depatment_college`) REFERENCES `college_details` (`college_id`);
 
 --
 -- Constraints for table `user_details`

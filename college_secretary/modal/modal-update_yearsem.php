@@ -57,8 +57,7 @@ $where = array(
             <option value="" disabled <?= $currentSem === null ? 'selected' : ''?>>Select Semester</option>
             <option value="1st Semester" <?= $currentSem === '1st Semester' ? 'selected' : ''?>>1st Semester</option>
             <option value="2nd Semester" <?= $currentSem === '2nd Semester' ? 'selected' : ''?>>2nd Semester</option>
-            <option value="3rd Semester" <?= $currentSem === '3rd Semester' ? 'selected' : ''?>>3rd Semester</option>
-            <option value="Summer" <?= $currentSem === 'Summer' ? 'selected' : ''?>>Summer</option>
+            <option value="Summer" <?= $currentSem === 'Summer' ? 'selected' : ''?>>Mid-Year</option>
         </select>
 
       </div>

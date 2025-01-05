@@ -5,7 +5,7 @@
 
 
             <div class="grid grid-cols-3 items-center">
-                <h1 class="text-3xl text-black pb-6 col-span-2">Departments</h1>
+                <h1 class="text-3xl text-black pb-6 col-span-2">DEPARTMENTS</h1>
                 
             </div>
                 

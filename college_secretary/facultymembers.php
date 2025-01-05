@@ -9,7 +9,7 @@ $_SESSION['dashboard'] =$title;
         <div class="w-full h-screen overflow-x-hidden border-t flex flex-col">
             <main class="w-full flex-grow p-6">
                 <div class="grid grid-cols-3 items-center mb-2">
-                <h1 class="text-3xl text-black pb-6 col-span-2">Faculty Members</h1>
+                <h1 class="text-3xl text-black pb-6 col-span-2">FACULTY MEMBER</h1>
                 
                 <p class="text-sm flex justify-end items-center">
                     <button type="button" id="openModalButton"  class="bg-orange text-orange px-5 py-2 rounded-full cursor-pointer hover:opacity-75 flex items-center">
@@ -167,9 +167,9 @@ $_SESSION['dashboard'] =$title;
                 
                     
                     echo '<div data-type="'.$type.'" data-id="'.$department_id.'" data-role="'.$role.'" class="card card_'.$department_id.' mt- md:mt-0 my-3 bg-white active-outline shadow-md rounded-lg px-3 py-3">
-                      <div class="grid gap-x-3 place-items-end grid-flow-col-dense grid-cols-3 items-end">
-                    <img style="height:100px" src="../uploads/faculty/'.$image.'" class="object-cover w-full rounded-lg ">
-                    <div class="container ">
+                    <div class="grid items-center justify-items-center" style="grid-template-columns: 1fr 2.5fr 1.5fr">
+                    <img style="height:100px " src="../uploads/faculty/'.$image.'" class=" object-cover w-full rounded-lg object-position: top center">
+                    <div class="container px-3">
                         <p>'.ucwords($name).'</p>
                         <p>'.ucwords($specialization).'</p>
                         <p>'.ucwords($phone).'</p>
@@ -316,9 +316,9 @@ function card($type,$role,$image,$name,$specialization,$phone,$id,$department_id
     }
     
     echo '<div data-type="'.$type.'" data-role="'.$role.'" class="card card_'.$department_id.' mt- md:mt-0 my-3 bg-white active-outline shadow-md rounded-lg px-3 py-3">
-    <div class="grid gap-x-3 place-items-end grid-flow-col-dense grid-cols-3 items-center">
-  <img style="height:100px" src="../uploads/faculty/'.$image.'" class="object-cover w-full rounded-lg ">
-  <div class="container ">
+     <div class="grid items-center justify-items-center" style="grid-template-columns: 1fr 2.5fr 1.5fr">
+  <img style="height:100px" src="../uploads/faculty/'.$image.'" class=" object-cover w-full rounded-lg ">
+  <div class="container px-3">
       <p>'.ucwords($name).'</p>
       <p>'.ucwords($specialization).'</p>
       <p>'.ucwords($phone).'</p>

@@ -148,9 +148,9 @@
                             echo 
                             '
                                 <div class="card cursor-pointer hover:bg-red-50  mt- md:mt-0 my-3 bg-white  shadow-md rounded-lg px-3 py-3" data-faculty-id="'.$faculty_id.'">
-                                  <div class="grid gap-x-3 place-items-end grid-flow-col-dense grid-cols-3 items-end">
-                                <img style="height:100px" src="'.$image.'" class="object-cover w-full rounded-lg ">
-                                <div class="container ">
+                                 <div class="grid items-center justify-items-center" style="grid-template-columns: 1fr 2.5fr 1.5fr">
+                                    <img style="height:100px" src="'.$image.'" class="object-cover w-full rounded-lg ">
+                                <div class="container px-3">
                                     <p class="whitespace-nowrap">'.$faculty_name.'</p>
                                     <p>'.$position.'</p>
                                     <p class="whitespace-nowrap">'.$specialization.'</p>

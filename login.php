@@ -7,42 +7,112 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        @import url('https://fonts.googleapis.com/css?family=Karla:400,700&display=swap');
-        .font-family-karla { font-family: 'Karla', sans-serif; }
-        .bg-sidebar { background: #3d68ff; }
-        .cta-btn { color: #3d68ff; }
-        .upgrade-btn { background: #1947ee; }
-        .upgrade-btn:hover { background: #0038fd; }
-        .active-nav-link { background: #1947ee; }
-        .nav-item:hover { background: #1947ee; }
-        .account-link:hover { background: #3d68ff; }
-        .bg-body { background: #1e502d; }
-        .bg-darkgreen { background: #1b4728; }
-        .bg-orange { background: #f27c22; }
+                body { 
+            font-family: 'Poppins', sans-serif;
+            position: relative;
+            min-height: 100vh;
+            background-color: rgba(27, 71, 40, 0.9); /* Dark green base color */
+        }
+
+        /* Background with reduced opacity */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('assets/image/image.png');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            opacity: 0.3; /* Reduced opacity here */
+            z-index: -1;
+        }
+    
+        .bg-darkgreen { 
+            background: rgba(27, 71, 40, 0.95);
+            backdrop-filter: blur(12px);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+        }
         
+        .input-transition {
+            transition: all 0.3s ease;
+        }
+        
+        .input-hover:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn-animate {
+            transition: all 0.3s ease;
+        }
+        .btn-animate:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(242, 124, 34, 0.4);
+        }
+        .btn-animate:active {
+            transform: translateY(0);
+        }
     </style>
-</head>
-<body class="bg-body font-family-karla flex items-center justify-center h-screen">
-    <div class="flex flex-col items-center bg-darkgreen text-white rounded-lg sm:p-8  p-10 shadow-md  sm:w-1/2 w-full ">
-        <img class="w-36 mb-0 p-0 " src="assets/image/logo.png" alt="Logo">
-        <h1 class="text-xl mt-0 font-bold ">CEIT </h1>
-        <h1 class="text-xl font-bold ">E-Portfolio </h1>
+    
+<body class="flex items-center justify-center min-h-screen p-4">
+    <div class="flex flex-col items-center bg-darkgreen text-white rounded-2xl sm:p-12 p-8 shadow-2xl sm:w-[600px] w-full border border-white/10">
+        <!-- Logo with subtle animation -->
+        <img class="w-28 mb-8 hover:scale-105 transition-transform duration-300" src="assets/image/logo.png" alt="Logo">
         
-        <form id="loginForm" class="w-full flex flex-col items-center mt-4">
-            <div class="mb-4 w-1/2">
-                <!-- <label for="employment-id" class="block text-sm mb-2">Employment ID</label> -->
+        <!-- Improved header typography -->
+        <h1 class="text-[22px] sm:text-2xl font-bold text-center leading-tight tracking-wide mb-2">
+            COLLEGE OF ENGINEERING AND INFORMATION TECHNOLOGY
+        </h1>
+        <h2 class="text-xl font-medium mb-12 text-orange-400/90">
+            Electronic Portfolio
+        </h2>
+        
+        <form id="loginForm" class="w-full flex flex-col items-center space-y-5">
+            <!-- Employment ID field -->
+            <div class="w-full sm:w-[85%] relative group">
+                <div class="absolute inset-y-0 left-4 flex items-center pointer-events-none">
+                    <i class="fas fa-user text-white-400/80"></i>
+                </div>
                 <input type="text" 
-                name="employment_id" id="employment_id" placeholder="Employment ID" class="w-full p-2 rounded-lg border focus:outline-none focus:ring-2 focus:ring-green-500 bg-white text-black">
+                    name="employment_id" 
+                    id="employment_id" 
+                    placeholder="Employment ID" 
+                    class="w-full px-11 py-3.5 rounded-xl border border-white/20 focus:outline-none focus:ring-2 focus:ring-orange-500/50 bg-white/10 text-white placeholder-gray-400 input-transition input-hover text-base"
+                    autocomplete="off">
             </div>
-            <div class="mb-4 w-1/2">
-                <!-- <label for="password" class="block text-sm mb-2">Password</label> -->
-                <input type="password"  name="password" id="password" placeholder="Password" class="w-full p-2 rounded-lg border focus:outline-none focus:ring-2 focus:ring-green-500 bg-white text-black">
+            
+            <!-- Password field -->
+            <div class="w-full sm:w-[85%] relative group">
+                <div class="absolute inset-y-0 left-4 flex items-center pointer-events-none">
+                    <i class="fas fa-lock text-white-400/80"></i>
+                </div>
+                <input type="password"  
+                    name="password" 
+                    id="password" 
+                    placeholder="Password" 
+                    class="w-full px-11 py-3.5 rounded-xl border border-white/20 focus:outline-none focus:ring-2 focus:ring-orange-500/50 bg-white/10 text-white placeholder-gray-400 input-transition input-hover text-base">
             </div>
-            <button type="submit" id="login" class="w-2/5 py-2 bg-orange-500 hover:bg-orange-600 text-white font-bold rounded-full">Log-in</button>
+
+            <!-- Login button -->
+            <button type="submit" 
+                id="login" 
+                class="w-full sm:w-[85%] py-3.5 bg-orange-500 hover:bg-orange-600 text-white font-semibold rounded-xl btn-animate text-base tracking-wide mt-4">
+                Log In
+            </button>
         </form>
-        <div class="mt-4 w-full flex justify-end" >
-            <p class="text-sm text-gray-400 hover:underline cursor-pointer" id="forgot">Forgot your Password?</p>
+
+        <!-- Forgot password link -->
+        <div class="mt-8 w-full flex justify-end sm:w-[85%]">
+            <p class="text-sm text-gray-300 hover:text-white transition-colors duration-300 flex items-center cursor-pointer" id="forgot">
+                <i class="fas fa-question-circle mr-2"></i>
+                Forgot your Password?
+            </p>
         </div>
     </div>
 </body>

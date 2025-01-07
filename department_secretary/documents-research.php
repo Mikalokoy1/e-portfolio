@@ -117,7 +117,7 @@
                         <?php 
                         //GET ALL FACULTY THAT HANDLE THE SUBJECTS
 
-                        $faculty_rows = $db->getAllRowsFromTableWhereGroup("faculty_subject",["subject_id=".$id],'faculty_id ASC');
+                        $faculty_rows = $db->getAllRowsFromTableWhereGroup("faculty_subject_section",["subject_id=".$id],'faculty_id ASC');
 
                         foreach ($faculty_rows as $faculty_row) {
 
@@ -148,7 +148,7 @@
                             echo 
                             '
                                 <div class="card cursor-pointer hover:bg-red-50  mt- md:mt-0 my-3 bg-white  shadow-md rounded-lg px-3 py-3" data-faculty-id="'.$faculty_id.'">
-                                 <div class="grid items-center justify-items-center" style="grid-template-columns: 1fr 2.5fr 1.5fr">
+                                <div class="grid items-center justify-items-center" style="grid-template-columns: 1fr 2.5fr 1.5fr">
                                     <img style="height:100px" src="'.$image.'" class="object-cover w-full rounded-lg ">
                                 <div class="container px-3">
                                     <p class="whitespace-nowrap">'.$faculty_name.'</p>
@@ -278,7 +278,19 @@ $(document).ready(function() {
             getDocument(subject_id,faculty_id,section_id,schoolyear);
         } 
     })
+    // $('#schoolyearFilter').change(function(){
+    //     var section_id = $('#documentFilter').val();
+    //     var schoolyear = $(this).val();
+    //     var $activeCard = $('.card.active-outline');
+    //     // Optional: Do something with the active card
+    //     if ($activeCard.length > 0) {
+    //         var faculty_id = $activeCard.data('faculty-id');
+    //         getDocument(subject_id,faculty_id,section_id,schoolyear);
+    //     } 
+    // })
+
     $('#schoolyearFilter').change(function(){
+        
         var section_id = $('#documentFilter').val();
         var schoolyear = $(this).val();
         var $activeCard = $('.card.active-outline');
@@ -287,6 +299,63 @@ $(document).ready(function() {
             var faculty_id = $activeCard.data('faculty-id');
             getDocument(subject_id,faculty_id,section_id,schoolyear);
         } 
+       
+        $.ajax({
+            url: 'controller/get_faculties.php', // Endpoint URL
+            type: 'POST', // HTTP request method
+            data: {
+                schoolyear: schoolyear,
+                subject_id: subject_id
+            }, // Send data to the server
+            success: function(response) {
+                 $('#faculty_members').empty();
+                 $('#faculty_members').append(response); 
+
+
+                 const firstCard = $('.card').first(); // Select the first '.card' element
+                console.log(firstCard);
+
+                // Check if the element exists
+                if (firstCard.length) {
+                    // Remove 'active-outline' class from all '.card' elements
+                    $('.card').removeClass('active-outline');
+
+                    // Add 'active-outline' class to the first '.card' element
+                    firstCard.addClass('active-outline');
+
+                    // Get the 'data-faculty-id' attribute from the first '.card' element
+                    const faculty_id = firstCard.data('faculty-id');
+                    const schoolyear = $('#schoolyearFilter').val(); // Get the value of '#schoolyearFilter'
+
+                    // Call functions with the necessary parameters
+                    documentFilter(faculty_id, schoolyear);
+
+                    const section_id = first_documentFilter(faculty_id, schoolyear); // Fetch section ID
+                    selectThefirst(section_id, faculty_id); // Select the first section
+                    getDocument(subject_id, faculty_id, section_id, schoolyear); // Fetch document
+                }
+
+
+                 $('.card').click(function(){
+              
+                $('.card').removeClass('active-outline');
+                $(this).addClass('active-outline')
+                var faculty_id = $(this).data('faculty-id');
+                // var section_id = $('#documentFilter').val();
+                var schoolyear = $('#schoolyearFilter').val();
+                documentFilter(faculty_id,schoolyear);
+                var section_id = (first_documentFilter(faculty_id,schoolyear))
+                selectThefirst(section_id,faculty_id)
+                getDocument(subject_id,faculty_id,section_id,schoolyear);
+                
+
+            })
+            
+            },
+            error: function(xhr, status, error) {
+                console.error('Error:', status, error); // Log any errors
+            }
+        });
     })
 
 

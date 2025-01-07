@@ -79,7 +79,7 @@
                                 echo '<div class="card bg-white shadow-md rounded-lg p-6 flex flex-col items-center">
                                 <img src="../uploads/subjects/'.$image.'" class="max-h-full h200 rounded-lg">
                                 <div class="flex flex-row items-center mt-2 w-full justify-between">
-                                    <span class="truncate md:truncate">'.$name.'</span>
+                                    <span class="truncate md:truncate">'.$code.' - '.$name.'</span>
                                 
                                     <div class="relative inline-block text-left">
                                         <i class="option_download material-icons bg-orange cursor-pointer hover:opacity-50 rounded-full" data-id="'.$id.'">more_horiz</i>

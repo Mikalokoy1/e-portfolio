@@ -9,7 +9,7 @@ $_SESSION['dashboard'] =$title;
         <div class="w-full h-screen overflow-x-hidden border-t flex flex-col">
             <main class="w-full flex-grow p-6">
                 <div class="grid grid-cols-3 items-center mb-2">
-                <h1 class="text-3xl text-black pb-6 col-span-2">FACULTY MEMBERS</h1>
+                <h1 class="text-3xl text-black pb-6 col-span-2">Faculty Members</h1>
                 
             </div>
 
@@ -142,7 +142,7 @@ $_SESSION['dashboard'] =$title;
                         
                             
                             echo '<div data-type="'.$type.'" data-id="'.$department_id.'" data-role="'.$role.'" class="card card_'.$department_id.' mt- md:mt-0 my-3 bg-white active-outline shadow-md rounded-lg px-3 py-3">
-                             <div class="grid items-center justify-items-center" style="grid-template-columns: 1fr 2.5fr 1.5fr">
+                            <div class="grid items-center justify-items-center" style="grid-template-columns: 1fr 2.5fr 1.5fr">
                              <img style="height:100px" src="../uploads/faculty/'.$image.'" class=" object-cover w-full rounded-lg ">
                             <div class="container px-3">
                                 <p>'.ucwords($name).'</p>

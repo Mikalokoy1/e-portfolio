@@ -159,7 +159,7 @@ $semAndSchoolYearRows = $db->getSemAndSchoolyears($my_college_id) ?? array();
                         $department_name = $row['department_name'];
                         $department_secretary = $row['department_secretary'];
                         $department_dean = $row['department_dean'];
-                        $secretary_image = ucwords($db->getIdByColumnValue("user_details",'user_id',$department_secretary,'image'));
+                        $secretary_image = ($db->getIdByColumnValue("user_details",'user_id',$department_secretary,'image')) ?? 'default.png';
                         $department_code = strtoupper($row['department_code']);
                         $department_image = $row['department_image'];
                         $depatment_college = $row['depatment_college'];
@@ -304,7 +304,7 @@ $semAndSchoolYearRows = $db->getSemAndSchoolyears($my_college_id) ?? array();
     }
 </script>
 <script>
-     function getDocument(upload_id,sy_id) {
+     function getDocument(upload_id,sy_id,courses="all") {
         console.log(upload_id)
         console.log(sy_id)
         $.ajax({
@@ -313,6 +313,7 @@ $semAndSchoolYearRows = $db->getSemAndSchoolyears($my_college_id) ?? array();
             data: {
                 upload_id: upload_id,
                 sy_id: sy_id,
+                courses: courses,
             }, // Send data to the server
             success: function(response) {
                 $('#documentDiv').empty();

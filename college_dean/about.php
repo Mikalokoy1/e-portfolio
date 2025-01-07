@@ -1,4 +1,5 @@
 <?php include 'components/header.php'?>
+
         <div class="w-full h-screen overflow-x-hidden border-t flex flex-col">
             <main class="w-full flex-grow ">
 
@@ -26,7 +27,6 @@
                     </div>
 
                 </div>
-
 
                 <div class="grid p-3">
                 <h1 class="text-black p-3 text-2xl font-bold">Welcome to the E-Portfolio System</h1>

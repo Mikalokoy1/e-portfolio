@@ -257,7 +257,7 @@ function toglerCard($card_number,$toglerCard,$checker)
         <tr data-card_col="'.$card_number.'" class="collapse2 hidden">
             <td colspan="5">
                 <div class="card px-2 pb-1">
-                     <div class="grid items-center" style="grid-template-columns: 3fr 1fr 1fr;">    
+                    <div class="grid items-center" style="grid-template-columns: 3fr 1fr 1fr;">    
                         <a style="font-size: 12px;" class="justify-self-start gap-4 font-bold" >
                            Subjects
                         </a>
@@ -284,7 +284,7 @@ function toglerCard($card_number,$toglerCard,$checker)
 
         echo '
         <tr style="position: relative; z-index: 10;" data-card_col="'.$card_number.'" class="collapse2 hidden">
-            <td colspan="5">
+             <td colspan="5">
                 <div class="card shadow-lg rounded-lg border text-left border-gray-200 p-2 mb-2">
                     <div class="grid items-center justify-items-center" style="grid-template-columns: 3fr 1fr 1fr">
                         <!-- Link Section -->

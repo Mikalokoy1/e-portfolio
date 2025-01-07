@@ -56,26 +56,50 @@ if(isset($_POST['upload_id'],$_POST['sy_id'],$_SESSION['id']))
         ';
 
 
-        echo '
-        <tr class="block table-row bg-white hover:bg-orange transition duration-200 ease-in">
-            <td class="p-3 block table-cell">
-                <a class="syllabusInfo" href="syllabustracking-info.php?s='.$subject_id.'&uid='.$upload_id.'&sem='.$semester.'&sy='.$academicYear.'">
-                    <div class="flex flex-row text-justify items-center">
-                        <i class="material-icons text-orange text-5xl mr-3">folder</i>
-                        <div class="flex flex-col">
-                            <p class="font-semibold text-gray-800">'.$subject_code.'</p>
-                            <p class="text-gray-500">'.$subject_name.'</p>
+        $courses_checker = $_POST['courses'];
+
+        if($courses_checker =="all")
+        {
+            echo '
+            <tr data-course="'.$subject_course_id.'" class="block table-row bg-white hover:bg-orange transition duration-200 ease-in">
+                <td class="p-3 block table-cell">
+                    <a class="syllabusInfo" style="font-size:11px" href="syllabustracking-info.php?s='.$subject_id.'&uid='.$upload_id.'&sem='.$semester.'&sy='.$academicYear.'">
+                        <div class="flex flex-row text-left items-center">
+                            <i class="material-icons text-orange text-5xl mr-3">folder</i>
+                            <div class="flex flex-col">
+                                <p style="font-size:11px" class="font-semibold text-gray-800">'.$subject_code.'</p>
+                                <p style="font-size:11px" class="text-gray-500">'.$subject_name.'</p>
+                            </div>
                         </div>
-                    </div>
-                </a>
-            </td>
-            <td class="p-3 block table-cell">
-                '.$icon.'
-            </td>
-        </tr>
-    
-    
-        ';
+                    </a>
+                </td>
+                <td class="p-3 block table-cell">
+                    '.$icon.'
+                </td>
+            </tr>
+            ';
+        }
+        if($courses_checker !="all" && $courses_checker == $subject_course_id)
+        {
+            echo '
+            <tr data-course="'.$subject_course_id.'" class="block table-row bg-white hover:bg-orange transition duration-200 ease-in">
+                <td class="p-3 block table-cell">
+                    <a class="syllabusInfo" style="font-size:11px" href="syllabustracking-info.php?s='.$subject_id.'&uid='.$upload_id.'&sem='.$semester.'&sy='.$academicYear.'">
+                        <div class="flex flex-row text-left items-center">
+                            <i class="material-icons text-orange text-5xl mr-3">folder</i>
+                            <div class="flex flex-col">
+                                <p style="font-size:11px" class="font-semibold text-gray-800">'.$subject_code.'</p>
+                                <p style="font-size:11px" class="text-gray-500">'.$subject_name.'</p>
+                            </div>
+                        </div>
+                    </a>
+                </td>
+                <td class="p-3 block table-cell">
+                    '.$icon.'
+                </td>
+            </tr>
+            ';
+        }
     }
 
     if($count==0)

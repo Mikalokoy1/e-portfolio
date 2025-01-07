@@ -15,7 +15,7 @@
                 
 
                     <div class="container flex text-orange mb-3">
-                        <p class="mr-3">Dashboard</p> 
+                        <a href="dashboard.php" class="mr-3">Dashboard</a>  
                         <p class="mr-3">></p>
                         <p class="mr-3">DIT Courses</p> 
                         <p class="mr-3">></p>

@@ -313,6 +313,17 @@
                 }
             }
         });
+        const contactValue = $('#facultyContacts').val();
+      
+        // Check if length is exactly 11
+        if (contactValue.length !== 11) {
+            Swal.fire({
+                icon: 'error',
+                title: 'Invalid Contact number',
+                text: 'Contact number must be exactly 11 characters long.',
+            });
+            return;
+        }
 
         if (!formValid) {
             Swal.fire({

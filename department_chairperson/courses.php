@@ -26,7 +26,7 @@
         <div class="w-full h-screen overflow-x-hidden border-t flex flex-col">
             <main class="w-full flex-grow p-6">
                     <div class="container flex text-orange mb-3">
-                        <p class="mr-3">Dashboard</p> 
+                        <a href="dashboard.php" class="mr-3">Dashboard</a>  
                         <p class="mr-3">></p>
                         <p class="mr-3"><?=$department_name?></p> 
                     </div>

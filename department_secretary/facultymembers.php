@@ -1,4 +1,9 @@
 <?php include 'components/header.php'?>
+<?php 
+$_SESSION['dashboard'] =
+' <a href="facultymembers.php" class="mr-3">Faculty Members</a> 
+    <p class="mr-3">></p>';
+?>
 
         <div class="w-full h-screen overflow-x-hidden border-t flex flex-col">
             <main class="w-full flex-grow p-6">
@@ -185,7 +190,7 @@
                 
                     
                     echo '<div data-type="'.$type.'" data-id="'.$department_id.'" data-role="'.$role.'" class="card card_'.$department_id.' mt- md:mt-0 my-3 bg-white active-outline shadow-md rounded-lg px-3 py-3">
-                     <div class="grid items-center justify-items-center" style="grid-template-columns: 1fr 2.5fr 1.5fr">
+                    <div class="grid items-center justify-items-center" style="grid-template-columns: 1fr 2.5fr 1.5fr">
                      <img style="height:100px" src="../uploads/faculty/'.$image.'" class=" object-cover w-full rounded-lg ">
                      <div class="container px-3">
                         <p>'.ucwords($name).'</p>
@@ -245,7 +250,7 @@ function card($type,$role,$image,$name,$specialization,$phone,$id,$department_id
     }
 
     echo '<div data-type="'.$type.'" data-role="'.$role.'" class="card card_'.$department_id.' mt- md:mt-0 my-3 bg-white active-outline shadow-md rounded-lg px-3 py-3">
-     <div class="grid items-center justify-items-center" style="grid-template-columns: 1fr 2.5fr 1.5fr">
+   <div class="grid items-center justify-items-center" style="grid-template-columns: 1fr 2.5fr 1.5fr">
      <img style="height:100px" src="../uploads/faculty/'.$image.'" class=" object-cover w-full rounded-lg ">
      <div class="container px-3">
       <p>'.ucwords($name).'</p>

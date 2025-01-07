@@ -87,7 +87,7 @@ $currentYear = $db->getIdByColumnValueWhere("current_year_sem",$where,"current_y
             </a>
             <a href="syllabustracking.php" class="syllabustracking flex items-center text-white opacity-75 hover:opacity-100 py-3 m-2 rounded-lg  pl-4 nav-item">
                 <i class="material-icons mr-3">fact_check</i>
-                Syllabus Tracking
+                SyllabusTracking
             </a>
             <a href="calendar.php" class="calendar flex items-center text-white opacity-75 hover:opacity-100 py-3 m-2 rounded-lg  pl-4 nav-item">
                 <i class="material-icons mr-3">calendar_month</i>
@@ -160,7 +160,7 @@ $currentYear = $db->getIdByColumnValueWhere("current_year_sem",$where,"current_y
                 </a>
                 <a href="syllabustracking.php" class="syllabustracking flex items-center text-white opacity-75 hover:opacity-100 py-2 pl-4 nav-item rounded-lg m-1">
                     <i class="material-icons mr-3">fact_check</i>
-                    SyllabusTracking
+                    Syllabus Tracking
                 </a>
                 <a href="calendar.php" class="calendar flex items-center text-white opacity-75 hover:opacity-100 py-2 pl-4 nav-item rounded-lg m-1">
                     <i class="material-icons mr-3">calendar_month</i>

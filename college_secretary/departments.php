@@ -8,7 +8,7 @@
 
 
             <div class="grid grid-cols-3 items-center">
-            <h1 class="text-3xl text-black pb-6 col-span-2">DEPARTMENTS</h1>
+                <h1 class="text-3xl text-black pb-6 col-span-2">Departments</h1>
                 
                 <p class="text-sm flex justify-end items-center">
                     <button type="button" id="openModalButton"  class="bg-orange text-orange px-5 py-2 rounded-full cursor-pointer hover:opacity-75 flex items-center">
@@ -34,7 +34,7 @@
                             $department_name = $row['department_name'];
                             $department_secretary = $row['department_secretary'];
                             $secretary_name = ucwords($db->getIdByColumnValue("user_details",'user_id',$department_secretary,'name'));
-                            $secretary_image = ucwords($db->getIdByColumnValue("user_details",'user_id',$department_secretary,'image'));
+                            $secretary_image = ($db->getIdByColumnValue("user_details",'user_id',$department_secretary,'image')) ?? 'default.png';
                             $department_code = strtoupper($row['department_code']);
                             $department_image = $row['department_image'];
                             $depatment_college = $row['depatment_college'];

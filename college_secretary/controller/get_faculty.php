@@ -34,8 +34,7 @@ list($semester, $academicYear) = explode(" - ", $schoolyear);
                                 $contacts = ucwords($db->getIdByColumnValue("user_details",'user_id',$faculty_id,'phone'));
         
     
-$faculty_image = trim($faculty_image); // Remove any whitespace
-$image = !empty($faculty_image) ? "../uploads/faculty/".$faculty_image : "../assets/image/default.png";
+                                $image = "../uploads/faculty/".$faculty_image;
     
     
                                 $buttonFacultyAction = //isset($_SESSION['dashboard']) ? 

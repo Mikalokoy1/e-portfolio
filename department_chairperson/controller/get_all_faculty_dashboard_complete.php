@@ -247,7 +247,7 @@ function toglerCard($card_number,$toglerCard)
         <tr data-card_col="'.$card_number.'" class="collapse hidden">
             <td colspan="5">
                 <div class="card px-2 pb-1">
-                     <div class="grid items-center" style="grid-template-columns: 3fr 1fr 1fr;">    
+                    <div class="grid items-center" style="grid-template-columns: 3fr 1fr 1fr;">    
                         <a style="font-size: 12px;" class="justify-self-start gap-4 font-bold" >
                            Subjects
                         </a>
@@ -293,7 +293,7 @@ function toglerCard($card_number,$toglerCard)
                         </a>
  
                         <!-- Icon Section -->
-                        <div class="text-center">
+                         <div class="text-center">
                             '.$subject_status.'
                         </div>
  

@@ -5,6 +5,11 @@ $_SESSION['root']="Dashboard";
 $college_id = $my_college_id;
 $semAndSchoolYearRows = $db->getSemAndSchoolyears($my_college_id) ?? array();
 ?>
+<?php 
+$_SESSION['dashboard'] =
+' <a href="dashboard.php" class="mr-3">Dashboard</a> 
+    <p class="mr-3">></p>';
+?>
 <style>
     .rounded-full {
         font-size: 12px !important; /* Ensure consistent icon size */
@@ -160,7 +165,7 @@ $semAndSchoolYearRows = $db->getSemAndSchoolyears($my_college_id) ?? array();
                         $id = $row['id'];
                         $department_name = $row['department_name'];
                         $department_secretary = $row['department_secretary'];
-                        $secretary_image = ucwords($db->getIdByColumnValue("user_details",'user_id',$department_secretary,'image'));
+                        $secretary_image = ($db->getIdByColumnValue("user_details",'user_id',$department_secretary,'image')) ?? 'default.png';
                         $department_code = strtoupper($row['department_code']);
                         $department_image = $row['department_image'];
                         $depatment_college = $row['depatment_college'];
@@ -197,8 +202,8 @@ $semAndSchoolYearRows = $db->getSemAndSchoolyears($my_college_id) ?? array();
                                         <img src="../uploads/faculty/'.$secretary_image.'" class="mr-3 w-10 h-10 rounded-full" alt="user_image">
                                         </div>
                                         <div class="grid w-full ">
-                                            <p class="text-base whitespace-nowrap overflow-hidden overflow-x-auto">'.$secretary_name.'</p>
-                                            <p class="text-sm">Secretary</p>
+                                             <p class="text-base truncate md:truncate">'.$full_name.'</p>
+                                                <p class="text-sm">Secretary</p>
 
                                             </div>
                                     </div>

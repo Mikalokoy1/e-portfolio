@@ -22,8 +22,7 @@
 
 
 
-  $_SESSION['dashboard'] = "Profile";
-  $_SESSION['temp_faculty_id']=$id;
+$_SESSION['temp_faculty_id']=$id;
 
 $user_id = $id;
 $full_name = ucwords($db->getIdByColumnValue("user_details","user_id",$user_id,"name")) ?? "";
@@ -64,9 +63,29 @@ if ($file_id && file_exists($filePath)) {
 $position = $db->getIdByColumnValue("users", "id", $user_id, "role");
 $positionDisplay = $position!="faculty" ? "hidden": "";
 $positionDisplay2 = $position=="faculty" ? "hidden": "";
+
+
+if(isset($_SESSION['dashboard']))
+{
+    $title = $_SESSION['dashboard'] . '
+    <p class="mr-3">Profile</p>';
+
+}else{
+    $title = '
+    <a href="facultymembers.php" class="mr-3">Faculty Members</a> 
+    <p class="mr-3">></p>
+    <p class="mr-3">Profile</p>
+    ';
+}
 ?>
         <div class="w-full h-screen overflow-x-hidden border-t flex flex-col">
             <main class="w-full flex-grow p-6">
+
+            <div class="container flex text-orange mb-3">
+                        <?=$title?>
+                   </div>
+
+
                 <h1 class="text-3xl text-black pb-6">Profile</h1>
 
                

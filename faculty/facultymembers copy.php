@@ -66,9 +66,9 @@
                    
                     
                     echo '<div data-type="'.$type.'" data-role="'.$role.'" class="card mt- md:mt-0 my-3 bg-white active-outline shadow-md rounded-lg px-3 py-3">
-                      <div class="grid items-center justify-items-center" style="grid-template-columns: 1fr 2.5fr 1.5fr">
+                      <div class="grid gap-x-3 place-items-end grid-flow-col-dense grid-cols-3 items-end">
                     <img style="height:100px" src="../uploads/faculty/'.$image.'" class="object-cover w-full rounded-lg ">
-                    <div class="container px-3">
+                    <div class="container ">
                         <p>'.ucwords($name).'</p>
                         <p>'.ucwords($specialization).'</p>
                         <p>'.ucwords($phone).'</p>

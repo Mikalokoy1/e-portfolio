@@ -165,7 +165,7 @@ $semAndSchoolYearRows = $db->getSemAndSchoolyears($my_college_id);
      $('.documents').removeClass('opacity-75');
 </script>
 <script>
-     function getDocument(upload_id,sy_id) {
+     function getDocument(upload_id,sy_id,courses="all") {
         console.log(upload_id)
         console.log(sy_id)
         $.ajax({
@@ -174,6 +174,7 @@ $semAndSchoolYearRows = $db->getSemAndSchoolyears($my_college_id);
             data: {
                 upload_id: upload_id,
                 sy_id: sy_id,
+                courses:courses,
             }, // Send data to the server
             success: function(response) {
                 $('#documentDiv').empty();
@@ -208,6 +209,12 @@ $semAndSchoolYearRows = $db->getSemAndSchoolyears($my_college_id);
         var sy = $(this).val();
         var document = $('#documentFilter').val()
         getDocument(document,sy);
+    });
+    $(document).on('change', '#courseFilter', function() {
+    var course_id = $(this).val();
+    var sy = $('#schoolYearFilter').val()
+    var document = $('#documentFilter').val()
+    getDocument(document,sy,course_id);
     });
 
 </script>

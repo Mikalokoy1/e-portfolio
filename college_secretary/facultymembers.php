@@ -9,7 +9,7 @@ $_SESSION['dashboard'] =$title;
         <div class="w-full h-screen overflow-x-hidden border-t flex flex-col">
             <main class="w-full flex-grow p-6">
                 <div class="grid grid-cols-3 items-center mb-2">
-                <h1 class="text-3xl text-black pb-6 col-span-2">FACULTY MEMBER</h1>
+                <h1 class="text-3xl text-black pb-6 col-span-2">Faculty Members</h1>
                 
                 <p class="text-sm flex justify-end items-center">
                     <button type="button" id="openModalButton"  class="bg-orange text-orange px-5 py-2 rounded-full cursor-pointer hover:opacity-75 flex items-center">

@@ -152,7 +152,7 @@
 
                             $buttonFacultyAction = //isset($_SESSION['dashboard']) ? 
                             '
-                            <a href="facultymembers-info.php?i='.$faculty_id.'" data-id="'.$faculty_id.'"class="bg-orange mt-3 text-center w-full text-orange px-1 py-2 rounded-full shadow-lg transform transition-transform duration-200 hover:scale-105 hover:shadow-xl hover:bg-orange-600">
+                            <a href="facultymembers-info.php?i='.$faculty_id.'" data-id="'.$faculty_id.'" class="bg-orange mt-3 text-center w-full text-orange px-1 py-2 rounded-full shadow-lg transform transition-transform duration-200 hover:scale-105 hover:shadow-xl hover:bg-orange-600">
                                         View
                                     </a>
                             '; 

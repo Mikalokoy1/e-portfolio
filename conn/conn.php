@@ -7,11 +7,11 @@ class DatabaseHandler {
 
     public function __construct() {
         // Set your database connection parameters here
-        $dbHost = 'localhost';
+        $dbHost = 'eportfolio.mysql.database.azure.com';
         $dbPort = '3306';
         $dbName = 'eportfolio';
-        $dbUser = 'root';
-        $dbPassword = '';
+        $dbUser = 'azureuser';
+        $dbPassword = 'Azure_User123';
 
 
         try {
